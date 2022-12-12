@@ -19,11 +19,11 @@
                 width: 250px;
                 border-radius: 10px 20px 10px 20px
             }
-            p::selection { 
+            ::selection { 
                 color: red;
                 background-color: yellow;
             }
-            .p3 {
+            p: nth-of-type (3) {
                 color: red;
                 transform: rotatex(180deg)
             }
@@ -36,7 +36,7 @@
         <div>
             <p> This is paragraph 1.</p>
             <p> This is paragraph 2.</p>
-            <p class="p3"> This is paragraph 3.</p>
+            <p> This is paragraph 3.</p>
             <p> This is paragraph 4.</p>
             <p> This is paragraph 5.</p>
         </div>
