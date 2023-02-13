@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<title> Gean's Coin Toss </title>
+<h1> Flip The Imaginary Coin!! </h1>
+<h2> this is only a simulation of a coin toss</h2>
+<body>
+    <button id="toss" type="button">Flip The Imaginary Coin!</button>
+  <div id="final"></div>
+  <div> </div>
+  <script>
+    let button = document.getElementById("toss");
+    let result = document.getElementById("final");
+
+    function fnClick(event) {
+      let num = Math.random()*100;
+
+      if (num < 50) {
+        result.innerHTML = "HEAD";
+      } else {
+        result.innerHTML = "TAIL";
+      }
+    }
+
+    button.addEventListener("click", fnClick);
+  </script>
+    </h2>
+    
+</body>
+</html>
