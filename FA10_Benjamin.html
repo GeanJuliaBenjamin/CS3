@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <title> 
+        Benjamin Formative Assessment 10
+    </title>
+    <header>
+
+    </header>
+    <body>
+      <p id="numRandom"></p>
+      <p id="numBreakdown"></p>
+    
+      <script>
+          let numRandom = Math.floor(Math.random() * 1000);
+    
+          document.getElementById("numRandom").textContent = `Randomly generated number: ${numRandom}`;
+    
+          let ones = numRandom % 10;
+          let tens = Math.floor((numRandom % 100) / 10);
+          let hundreds = Math.floor(numRandom / 100);
+    
+          document.getElementById("numBreakdown").textContent = `Breakdown: ${hundreds}00, ${tens}0, ${ones}`;
+
+      </script>
+    </body>
+    </html>
