@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Benjamin Formative Assessment 11
+    </title>
+    <script>
+        function determineTriangle(a, b, c){
+            if (a === b && b === c ) {
+                alert("your triangle is EQUILATERAL");
+            } else if ( a === b || a === c || b == c){
+                alert("your triangle is ISOSCELES");
+            } else {
+                alert("your triangle is SCALENE");
+            }
+        }
+        let a = prompt("enter the value of your first side:");
+        let b = prompt("enter the value of your second side:");
+        let c = prompt("enter the value of your third side:");
+
+        determineTriangle(a, b, c);
+    </script>
+    </body>
+</html> 
