@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+    <body onload="genOTP()">
+		<h1> Final Verification Step </h1>
+		<h2> Current OTP: <span id="otp" > _ _ _ _ _ _ </span> <a href="#" onclick="genOTP()"> New OTP </a></h2>
+		<button onclick="userinputOTP()"> Enter the OTP as shown above </button>
+    <script>
+    	/* do not forget to include comments in your answer */
+
+		function genOTP(){ //this function generates the one time password
+			var otp =Math.floor(Math.random() * (999999 - 100000 + 1)+ 100000); //this will input a random six digit number
+
+			document.getElementById("otp").innerHTML = otp; //displays the otp
+		}
+
+		function userinputOTP(){ //the input of the user, this function determines whether or not the password is correct
+			 uInputOTP = prompt("Please Enter The One Time Password: ");
+			 realOTP = document.getElementById("otp").innerHTML;
+
+			if (uInputOTP === realOTP){ // if uInput is the same as realOTP
+				window.open('https://www.google.com');
+			}else {
+				alert(" The Password that You have inputted is incorrect! ");
+				genOTP();
+			}
+		}
+    </script>
+	
+</body>
+</html>
+

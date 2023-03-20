@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Gean's FoodStore </title>
+    <!-- type in the necessary meta tags -->
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+
+	</head>
+<body>
+	<h1> Welcome to Gean's Foodstore! </h1>
+	<h3> Where every day is a savings day :D </h3>
+	<h2> Please select from the following items </h2>
+	<!--- provide your own 3 items and their prices in the list --->
+	<ol>
+		<li> (1) Large Fries price: 25.00 </li>
+		<li> (2) Donut price: 15.00 </li>
+		<li> (3) Cola price: 30.00 </li>
+	</ol>
+	<!-- the following will be used to display purchase information -->
+    <p> Item selected : <span id="item"> </span> </p>
+	<p> Qty bought : <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill <span id="tbill"> </span> </p>
+	<button onclick="Order()"> Buy an Item </button>
+	<button onclick="Clear()"> Clear </button>
+    
+    <script>
+    	/* do not forget to include comments in your answer */
+		var Lfries; 
+		var Donut;
+		var Cola;
+		var numitem;
+		var numqty;
+		function Order(){ // this function is for determining the variables for the order of the user
+			var Lfries = 25;
+			var Donut = 15;
+			var Cola = 30;
+			 item = parseInt(prompt("What item would you like to order? (type in the corresponding number)")); // parseInt converts the user's string input to an integer
+			if(Number.isInteger(parseInt(item))){
+			 switch(item){ // this algorithm sets the users input to its corresponding case
+				case 1: // the first case is for calculating the amount and price of the large fries
+					numqty = prompt("please specify how many of these items you will be buying:");
+					document.getElementById('qty').innerHTML = numqty;
+					document.getElementById('item').innerHTML = "Large Fries";
+					document.getElementById('bill').innerHTML = Lfries;
+					document.getElementById('tbill').innerHTML = numqty*Lfries;
+					break;
+					
+				case 2: // the second case is for calcualting the amount and price of the donuts ordered
+					numqty = prompt("please specify how many of these items you will be buying:");
+					document.getElementById('qty').innerHTML = numqty;
+					document.getElementById('item').innerHTML = "Donut";
+					document.getElementById('bill').innerHTML = Donut;
+					document.getElementById('tbill').innerHTML = numqty*Donut;
+					break;
+				case 3: // the third case is for calculating the amount and the price of the colas ordered
+					numqty = prompt("please specify how many of these items you will be buying:");
+					document.getElementById('qty').innerHTML = numqty;
+					document.getElementById('item').innerHTML = "Cola";
+					document.getElementById('bill').innerHTML = Cola;
+					document.getElementById('tbill').innerHTML = numqty*Cola;
+					break;
+				default: // when the user inputs a number greater than 3 then this alert pops up
+					alert("Item does not exist");
+			 }
+			} else { // when the user does not input an integer then this alert pops up
+				alert("invalid quantity");
+			}
+			 
+		}
+		function Clear(){ // this function serves to clear the inputs that the user has made
+			var numqty = 0
+			var clear = " ";
+			document.getElementById('qty').innerHTML = clear;
+			document.getElementById('item').innerHTML = clear;
+			document.getElementById('bill').innerHTML = clear;
+			document.getElementById('tbill').innerHTML = clear;
+		}
+    
+    </script>
+</body>
+
+</html>
