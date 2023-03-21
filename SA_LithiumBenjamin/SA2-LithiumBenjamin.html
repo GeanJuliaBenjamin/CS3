@@ -7,7 +7,6 @@
         <style>
         	* { box-sizing: border-box; font-family: arial; color: white;}
             div {background: navy;
-		background-repeat: no-repeat;
             	width: 30%; 
                 text-align:center;
            		width:250px; 
@@ -54,7 +53,7 @@
 
         <script>
 
-			function cPix(this){ // this function replaces the image and the title of the image
+			function cPix(img){ // this function replaces the image and the title of the image
 				document.getElementById("avatar").src = img.src; // this part of the function is the changing of the image
 
 				document.getElementById("avatar").title = img.title; //whilst this part changes the title of the image when you hover over it
