@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Benjamin Formative Assessment 12</title>
+    <style>
+      span {
+        display: inline-block;
+        font-weight: 500;
+        width: 20px;
+        border: 1px solid black;
+        padding: 1px;
+        margin: 3px;
+      }
+	  
+	  div{border: 1px solid black; 
+		padding: 1px; 
+		padding-right: 5px; 
+		padding-bottom: 3px; 
+		display: inline-block; 
+		}
+    </style>
+  </head>
+  <body>
+    <h1> Geaniplier </h1>
+    <p>Enter Your Multiplicand And Multiplier (these numbers must be in the range of 2-10)</p>
+    <br>
+		<input type="number" id="num1" placeholder="Multiplicand"></input>
+		<input type="number" id="num2" placeholder="Multiplier"></input>
+    <br>
+    <br>
+    <button onclick="generateTable()">Make The Multiplication Table!</button>
+    <br>
+    <br>
+    <script>
+		var div = document.createElement('div');
+      function generateTable() {
+		div.id = "table";
+		document.body.appendChild(div);
+        var x = document.getElementById("num1").value;
+        var y = document.getElementById("num2").value;
+        var uinput = " ";
+        if (x < 2 || x > 10 || y < 2 || y > 10) {
+            alert("Please enter values between 2 and 10")
+
+        } else {
+          for (var i = 1; i <= x; i++) {
+            for (var j = 1; j <= y; j++) {
+              uinput += "<span>" + (i * j) + "</span>";
+            }
+            uinput += "<br>";
+          }
+          document.getElementById("table").innerHTML = uinput;
+			}
+        }
+    </script>
+  </body>
+</html>
