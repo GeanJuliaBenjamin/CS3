@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    input, textarea, select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+    }
+    input {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="signup-form" onsubmit="return validateForm()">
+    </br></br></br></br></br></br></br></br>
+      <fieldset>
+        <legend>Sign Up To Gean's Artsy Worskhop!</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="prefer not to mention">Prefer not to mention</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"  required></input>
+
+        <label for="interests">Interests:</label>
+        <textarea id="interests" name="interests" required></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </fieldset>
+    </form>
+    <div id="output"></div>
+  </div>
+  <script>
+    const form = document.getElementById('signup-form');
+    const output = document.getElementById('output');
+      const nameInput = document.getElementById('name');
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      const emailInput = document.getElementById('email');
+      const genderInput = document.getElementById('gender');
+      const addressInput = document.getElementById('address');
+      const interestsInput = document.getElementById('interests');
+
+        function validateForm() {
+    var name = document.getElementById("name").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var interest = document.getElementById("interest").value;
+
+    if (name == "" || username == "" || password == "" || email == "" || interest == "") {
+        alert("Please fill out all required fields");
+        return false;
+  }
+}    form.addEventListener('submit', (event) => {
+
+      output.innerHTML = `
+      
+
+    <h2>Output:</h2>
+    <p>Name: ${nameInput.value}</p>
+    <p>Username: ${usernameInput.value}</p>
+    <p>Password: ${passwordInput.value}</p>
+    <p>Email: ${emailInput.value}</p>
+    <p>Gender: ${genderInput.value}</p>
+    <p>Address: ${addressInput.value}</p>
+    <p>Interests: ${interestsInput.value}</p>
+  `;
+  event.preventDefault();
+});
+  </script>
+</body>
+</html>
